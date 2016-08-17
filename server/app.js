@@ -6,11 +6,13 @@ var bodyParser = require('body-parser');
 
 //Our routes
 var books = require('./routes/books');//link to books file
-
+var genre = require('./routes/genre');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/books', books); //go find that required route, then do whats in there
+
+app.use('/genre', genre);
 
 // Catchall route
 app.get('/*', function (req, res) {
